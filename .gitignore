@@ -58,3 +58,5 @@ yarn-error.log
 
 # VitePress build output
 docs/.vitepress/dist/
+
+.tmp-playwright
