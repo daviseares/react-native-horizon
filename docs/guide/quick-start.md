@@ -1,6 +1,6 @@
-# Exemplo Rapido
+# Quick Start
 
-Este exemplo mostra carregamento, ponto inicial e leitura de rotacao.
+This example shows loading, initial camera framing, and rotation tracking.
 
 ```tsx
 import { useState } from 'react';
@@ -33,9 +33,9 @@ export default function Screen() {
 }
 ```
 
-## Dica de enquadramento inicial
+## Initial framing tips
 
-- Mais zoom in: reduza `initialFov`.
-- Mais zoom out: aumente `initialFov`.
-- Comeco horizontal: ajuste `initialYaw`.
-- Comeco vertical: ajuste `initialPitch`.
+- More zoom in: reduce `initialFov`.
+- More zoom out: increase `initialFov`.
+- Horizontal starting angle: adjust `initialYaw`.
+- Vertical starting angle: adjust `initialPitch`.

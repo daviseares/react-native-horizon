@@ -3,36 +3,36 @@
 ## `sourceURL`
 
 - Tipo: `string`
-- Obrigatoria.
-- URL da imagem 360 equirretangular.
+- Required.
+- Equirectangular 360 image URL.
 
 ## `initialYaw`
 
-- Tipo: `number`
-- Padrao: `0`
-- Angulo horizontal inicial em graus.
+- Type: `number`
+- Default: `0`
+- Initial horizontal angle in degrees.
 
 ## `initialPitch`
 
-- Tipo: `number`
-- Padrao: `0`
-- Angulo vertical inicial em graus.
+- Type: `number`
+- Default: `0`
+- Initial vertical angle in degrees.
 
 ## `initialFov`
 
-- Tipo: `number`
-- Padrao: plataforma define valor inicial seguro.
-- Campo de visao inicial em graus.
-- Menor valor = mais zoom in.
-- Maior valor = mais zoom out.
+- Type: `number`
+- Default: platform-defined safe initial value.
+- Initial field of view in degrees.
+- Smaller value = more zoom in.
+- Larger value = more zoom out.
 
 ## `useDeviceOrientation`
 
-- Tipo: `boolean`
-- Padrao: `false`
-- Ativa orientacao do dispositivo para controlar yaw/pitch.
+- Type: `boolean`
+- Default: `false`
+- Enables device orientation input for yaw/pitch updates.
 
 ## `style`
 
-- Tipo: `StyleProp<ViewStyle>`
-- Estilo do container nativo.
+- Type: `StyleProp<ViewStyle>`
+- Native container style.

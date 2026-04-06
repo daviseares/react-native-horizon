@@ -3,24 +3,24 @@ layout: home
 
 hero:
   name: react-native-horizon
-  text: Viewer 360 nativo para React Native
-  tagline: Panoramas equirretangulares com iOS (SceneKit), Android (SceneView/Filament) e API tipada.
+  text: Native 360 Viewer for React Native
+  tagline: Equirectangular panoramas with iOS (SceneKit), Android (SceneView/Filament), and a typed API.
   image:
     src: /logo.svg
     alt: react-native-horizon
   actions:
     - theme: brand
-      text: Comecar
+      text: Get Started
       link: /guide/getting-started
     - theme: alt
-      text: Ver API
+      text: View API
       link: /api/props
 
 features:
-  - title: Render nativo
-    details: Sem WebView nos apps nativos, com foco em performance e fluidez.
-  - title: Controle inicial
-    details: Defina yaw, pitch e fov iniciais para abrir no enquadramento certo.
-  - title: API simples
-    details: Componente unico, eventos claros e tipagem TypeScript.
+  - title: Native rendering
+    details: No WebView on mobile apps, focused on smooth performance.
+  - title: Initial camera control
+    details: Define initial yaw, pitch, and fov to start in the right framing.
+  - title: Simple API
+    details: One component, clear events, and TypeScript typings.
 ---

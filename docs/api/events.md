@@ -1,8 +1,8 @@
-# Eventos
+# Events
 
 ## `onLoad`
 
-Disparado quando a textura panoramica termina de carregar.
+Triggered when the panorama texture has finished loading.
 
 Payload:
 
@@ -14,7 +14,7 @@ Payload:
 
 ## `onRotationChange`
 
-Disparado quando a camera muda de rotacao.
+Triggered whenever camera rotation changes.
 
 Payload:
 

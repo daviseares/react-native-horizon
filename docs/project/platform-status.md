@@ -1,16 +1,16 @@
-# Status de Plataforma
+# Platform Status
 
 ## iOS
 
-- Render nativo com SceneKit.
-- Suporta imagem remota, pan, pinch zoom, yaw/pitch inicial e eventos.
+- Native rendering with SceneKit.
+- Supports remote image loading, pan, pinch zoom, initial yaw/pitch, and events.
 
 ## Android
 
-- Render nativo com SceneView/Filament.
-- Suporta imagem remota, pan, pinch zoom, yaw/pitch/fov inicial e eventos.
-- Ajustes recentes de inicializacao para garantir `initialFov` no primeiro carregamento.
+- Native rendering with SceneView/Filament.
+- Supports remote image loading, pan, pinch zoom, initial yaw/pitch/fov, and events.
+- Recent initialization fixes ensure `initialFov` is respected on first load.
 
 ## Web
 
-- Fallback simples via `iframe`.
+- Simple fallback via `iframe`.

@@ -1,12 +1,12 @@
-# Documentacao local
+# Local documentation
 
-Rodar em desenvolvimento:
+Run in development:
 
 ```bash
 npm run docs:dev
 ```
 
-Build estatico:
+Static build:
 
 ```bash
 npm run docs:build

@@ -5,43 +5,43 @@ const repo = 'https://github.com/daviseares/react-native-horizon';
 export default defineConfig({
   title: 'react-native-horizon',
   description: 'High-performance 360 viewer for React Native and Expo.',
-  lang: 'pt-BR',
+  lang: 'en-US',
   base: '/react-native-horizon/',
   cleanUrls: true,
   themeConfig: {
     logo: '/logo.svg',
     siteTitle: 'react-native-horizon',
     nav: [
-      { text: 'Guia', link: '/guide/getting-started' },
+      { text: 'Guide', link: '/guide/getting-started' },
       { text: 'API', link: '/api/props' },
       { text: 'GitHub', link: repo }
     ],
     sidebar: [
       {
-        text: 'Guia',
+        text: 'Guide',
         items: [
-          { text: 'Introducao', link: '/guide/getting-started' },
-          { text: 'Exemplo Rapido', link: '/guide/quick-start' }
+          { text: 'Getting Started', link: '/guide/getting-started' },
+          { text: 'Quick Start', link: '/guide/quick-start' }
         ]
       },
       {
-        text: 'Referencia',
+        text: 'Reference',
         items: [
           { text: 'Props', link: '/api/props' },
-          { text: 'Eventos', link: '/api/events' }
+          { text: 'Events', link: '/api/events' }
         ]
       },
       {
-        text: 'Projeto',
+        text: 'Project',
         items: [
-          { text: 'Status de Plataforma', link: '/project/platform-status' },
+          { text: 'Platform Status', link: '/project/platform-status' },
           { text: 'Roadmap', link: '/project/roadmap' }
         ]
       }
     ],
     socialLinks: [{ icon: 'github', link: repo }],
     footer: {
-      message: 'Feito com Expo Modules e render nativo.',
+      message: 'Built with Expo Modules and native rendering.',
       copyright: 'MIT License'
     },
     search: {
@@ -52,7 +52,7 @@ export default defineConfig({
     ['meta', { name: 'theme-color', content: '#0d1b3e' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: 'react-native-horizon' }],
-    ['meta', { property: 'og:description', content: 'Viewer 360 para React Native com iOS e Android nativos.' }],
+    ['meta', { property: 'og:description', content: '360 viewer for React Native with native iOS and Android rendering.' }],
     ['meta', { property: 'og:image', content: '/react-native-horizon/logo.svg' }]
   ]
 });

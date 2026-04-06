@@ -1,26 +1,26 @@
-# Introducao
+# Getting Started
 
-`react-native-horizon` e uma biblioteca para visualizar imagens 360 equirretangulares em React Native.
+`react-native-horizon` is a library for rendering equirectangular 360 images in React Native.
 
-## Instalacao
+## Installation
 
 ```bash
 bun add react-native-horizon
 ```
 
-ou
+or
 
 ```bash
 npm install react-native-horizon
 ```
 
-## Requisitos
+## Requirements
 
 - Expo Modules
 - React Native
-- URL HTTPS para a imagem panoramica
+- HTTPS URL for the panorama image
 
-## Primeiro uso
+## First usage
 
 ```tsx
 import { ReactNativeHorizonView } from 'react-native-horizon';
@@ -38,4 +38,4 @@ export function Panorama() {
 }
 ```
 
-Se a cena abrir com zoom indesejado, aumente `initialFov` (ex.: `80`, `85`).
+If the scene starts too zoomed in, increase `initialFov` (for example: `80`, `85`).

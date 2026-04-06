@@ -1,28 +1,28 @@
 # react-native-horizon
 
-Biblioteca React Native para visualizacao de imagens 360 (equirretangulares) com foco em performance e API tipada.
+React Native library for rendering equirectangular 360 images with a typed API and native performance.
 
-Documentacao oficial: https://daviseares.github.io/react-native-horizon/
+Official documentation: https://daviseares.github.io/react-native-horizon/
 
-## Status atual
+## Current status
 
-- iOS: viewer 360 nativo com SceneKit (carregamento remoto, pan, pinch/zoom, eventos).
-- Android: bridge da API pronta, implementacao de render 360 ainda em migracao para pipeline SceneView/Filament.
-- Web: fallback simples via `iframe`.
+- iOS: native 360 viewer with SceneKit (remote loading, pan, pinch zoom, events).
+- Android: native rendering with SceneView/Filament pipeline, including camera controls and events.
+- Web: simple fallback via `iframe`.
 
-## Instalacao
+## Installation
 
 ```bash
 bun add react-native-horizon
 ```
 
-ou
+or
 
 ```bash
 npm install react-native-horizon
 ```
 
-## Uso
+## Usage
 
 ```tsx
 import { ReactNativeHorizonView } from 'react-native-horizon';
@@ -47,26 +47,26 @@ export function Panorama() {
 
 ## Props
 
-- `sourceURL: string` - URL HTTPS da imagem panoramica.
-- `initialYaw?: number` - angulo inicial horizontal em graus.
-- `initialPitch?: number` - angulo inicial vertical em graus.
-- `initialFov?: number` - zoom inicial em graus de campo de visao (quanto menor, mais zoom).
-- `onLoad?: ({ nativeEvent: { url } }) => void` - disparado quando a textura termina de carregar.
-- `onRotationChange?: ({ nativeEvent: { yaw, pitch } }) => void` - disparado ao rotacionar.
-- `style?: StyleProp<ViewStyle>` - estilo do container nativo.
+- `sourceURL: string` - HTTPS URL for the panorama image.
+- `initialYaw?: number` - initial horizontal angle in degrees.
+- `initialPitch?: number` - initial vertical angle in degrees.
+- `initialFov?: number` - initial field-of-view in degrees (smaller values zoom in).
+- `onLoad?: ({ nativeEvent: { url } }) => void` - triggered after texture loading completes.
+- `onRotationChange?: ({ nativeEvent: { yaw, pitch } }) => void` - triggered when rotation changes.
+- `style?: StyleProp<ViewStyle>` - native container style.
 
-## Desenvolvimento
+## Development
 
 ```bash
 bun install
 bun run build
 ```
 
-Para abrir o exemplo:
+To run the example:
 
 ```bash
 cd example
 npm run ios
-# ou
+# or
 npm run android
 ```
