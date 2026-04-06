@@ -1,0 +1,10 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "react-native-horizon": ["../src/index"],
+      "react-native-horizon/*": ["../src/*"]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+plugins {
+  id 'com.android.library'
+  id 'expo-module-gradle-plugin'
+}
+
+group = 'expo.modules.horizon'
+version = '0.1.0'
+
+android {
+  namespace "expo.modules.horizon"
+  defaultConfig {
+    minSdkVersion 24
+    versionCode 1
+    versionName "0.1.0"
+  }
+  lintOptions {
+    abortOnError false
+  }
+}
+
+dependencies {
+  implementation("io.github.sceneview:sceneview:2.3.0")
+  implementation("androidx.activity:activity-ktx:1.9.0")
+}

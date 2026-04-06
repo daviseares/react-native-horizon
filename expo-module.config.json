@@ -1,0 +1,9 @@
+{
+  "platforms": ["apple", "android", "web"],
+  "apple": {
+    "modules": ["ReactNativeHorizonModule"]
+  },
+  "android": {
+    "modules": ["expo.modules.horizon.ReactNativeHorizonModule"]
+  }
+}
