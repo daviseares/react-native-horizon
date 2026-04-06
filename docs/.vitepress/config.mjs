@@ -4,7 +4,7 @@ const repo = 'https://github.com/daviseares/react-native-horizon';
 
 export default defineConfig({
   title: 'react-native-horizon',
-  description: 'High-performance 360 viewer for React Native and Expo.',
+  description: 'High-performance native 360 viewer for React Native and Expo.',
   lang: 'en-US',
   base: '/react-native-horizon/',
   cleanUrls: true,
@@ -52,7 +52,7 @@ export default defineConfig({
     ['meta', { name: 'theme-color', content: '#0d1b3e' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: 'react-native-horizon' }],
-    ['meta', { property: 'og:description', content: '360 viewer for React Native with native iOS and Android rendering.' }],
+    ['meta', { property: 'og:description', content: 'Native 360 viewer for React Native with iOS and Android rendering.' }],
     ['meta', { property: 'og:image', content: '/react-native-horizon/logo.svg' }]
   ]
 });

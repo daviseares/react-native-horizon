@@ -2,7 +2,7 @@
 
 ## `sourceURL`
 
-- Tipo: `string`
+- Type: `string`
 - Required.
 - Equirectangular 360 image URL.
 

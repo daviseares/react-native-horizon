@@ -8,18 +8,48 @@ Official documentation: https://daviseares.github.io/react-native-horizon/
 
 - iOS: native 360 viewer with SceneKit (remote loading, pan, pinch zoom, events).
 - Android: native rendering with SceneView/Filament pipeline, including camera controls and events.
-- Web: simple fallback via `iframe`.
 
 ## Installation
 
+### Expo project (recommended)
+
 ```bash
-bun add react-native-horizon
+npx expo install react-native-horizon
 ```
 
-or
+This library ships native code, so use a development build (Expo Go is not supported):
+
+```bash
+npx expo run:ios
+# or
+npx expo run:android
+```
+
+If your Expo project does not have `ios/` and `android/` directories yet:
+
+```bash
+npx expo prebuild
+```
+
+### React Native CLI project
+
+Install Expo Modules support first:
+
+```bash
+npm install expo
+npx install-expo-modules@latest
+```
+
+Then install the library:
 
 ```bash
 npm install react-native-horizon
+```
+
+Install iOS pods:
+
+```bash
+npx pod-install ios
 ```
 
 ## Usage

@@ -18,9 +18,9 @@ hero:
 
 features:
   - title: Native rendering
-    details: No WebView on mobile apps, focused on smooth performance.
+    details: Fully native iOS and Android rendering focused on smooth performance.
   - title: Initial camera control
-    details: Define initial yaw, pitch, and fov to start in the right framing.
+    details: Define initial yaw, pitch, and FOV to start in the right framing.
   - title: Simple API
     details: One component, clear events, and TypeScript typings.
 ---

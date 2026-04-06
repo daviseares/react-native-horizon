@@ -2,16 +2,51 @@
 
 `react-native-horizon` is a library for rendering equirectangular 360 images in React Native.
 
+It is built with Expo Modules and includes native iOS/Android code.
+
 ## Installation
 
+### Expo project (recommended)
+
 ```bash
-bun add react-native-horizon
+npx expo install react-native-horizon
 ```
 
-or
+After installing, create a development build (Expo Go is not supported for custom native modules):
+
+```bash
+npx expo run:ios
+# or
+npx expo run:android
+```
+
+If your Expo app does not have `ios/` and `android/` folders yet, generate them with:
+
+```bash
+npx expo prebuild
+```
+
+You can still keep a managed workflow and let EAS Build handle native generation in CI.
+
+### React Native CLI project
+
+If your project is plain React Native CLI, first enable Expo Modules support:
+
+```bash
+npm install expo
+npx install-expo-modules@latest
+```
+
+Then install this library:
 
 ```bash
 npm install react-native-horizon
+```
+
+Install iOS pods:
+
+```bash
+npx pod-install ios
 ```
 
 ## Requirements
