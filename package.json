@@ -13,7 +13,10 @@
     "prepublishOnly": "expo-module prepublishOnly",
     "expo-module": "expo-module",
     "open:ios": "xed example/ios",
-    "open:android": "open -a \"Android Studio\" example/android"
+    "open:android": "open -a \"Android Studio\" example/android",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "keywords": [
     "react-native",
@@ -27,13 +30,14 @@
   },
   "author": "Davi Seares <davi.bseares@gmail.com> (https://github.com/daviseares)",
   "license": "MIT",
-  "homepage": "https://github.com/daviseares/react-native-horizon#readme",
+  "homepage": "https://daviseares.github.io/react-native-horizon/",
   "dependencies": {},
   "devDependencies": {
     "@types/react": "~19.1.1",
     "expo-module-scripts": "^55.0.2",
     "expo": "^55.0.11",
-    "react-native": "0.82.1"
+    "react-native": "0.82.1",
+    "vitepress": "^1.6.4"
   },
   "peerDependencies": {
     "expo": "*",

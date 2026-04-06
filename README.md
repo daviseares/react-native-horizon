@@ -2,6 +2,8 @@
 
 Biblioteca React Native para visualizacao de imagens 360 (equirretangulares) com foco em performance e API tipada.
 
+Documentacao oficial: https://daviseares.github.io/react-native-horizon/
+
 ## Status atual
 
 - iOS: viewer 360 nativo com SceneKit (carregamento remoto, pan, pinch/zoom, eventos).
