@@ -49,14 +49,26 @@ class ReactNativeHorizonView: ExpoView {
   }
 
   func setSourceURL(_ sourceURL: String) {
-    guard sourceURL != currentSourceURL else {
+    let trimmedSourceURL = sourceURL.trimmingCharacters(in: .whitespacesAndNewlines)
+    guard !trimmedSourceURL.isEmpty else {
       return
     }
 
-    currentSourceURL = sourceURL
+    if trimmedSourceURL == currentSourceURL {
+      return
+    }
+
+    currentSourceURL = trimmedSourceURL
     textureTask?.cancel()
 
-    guard let url = URL(string: sourceURL) else {
+    if let localImage = loadLocalImage(from: trimmedSourceURL) {
+      applyPanoramaImage(localImage, sourceURL: trimmedSourceURL)
+      return
+    }
+
+    guard let url = URL(string: trimmedSourceURL),
+          let scheme = url.scheme?.lowercased(),
+          scheme == "http" || scheme == "https" else {
       return
     }
 
@@ -76,14 +88,44 @@ class ReactNativeHorizonView: ExpoView {
       }
 
       DispatchQueue.main.async {
-        guard sourceURL == self.currentSourceURL else {
+        guard trimmedSourceURL == self.currentSourceURL else {
           return
         }
-        self.applyPanoramaImage(image, sourceURL: sourceURL)
+        self.applyPanoramaImage(image, sourceURL: trimmedSourceURL)
       }
     }
 
     textureTask?.resume()
+  }
+
+  private func loadLocalImage(from source: String) -> UIImage? {
+    if let url = URL(string: source), url.isFileURL {
+      return UIImage(contentsOfFile: url.path)
+    }
+
+    if source.hasPrefix("/") {
+      return UIImage(contentsOfFile: source)
+    }
+
+    if source.hasPrefix("asset:/") {
+      let assetPath = source.replacingOccurrences(of: "asset:/", with: "").trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+      if let image = UIImage(named: assetPath) {
+        return image
+      }
+
+      let nsAssetPath = assetPath as NSString
+      let name = nsAssetPath.deletingPathExtension
+      let ext = nsAssetPath.pathExtension
+      if let path = Bundle.main.path(forResource: name, ofType: ext.isEmpty ? nil : ext) {
+        return UIImage(contentsOfFile: path)
+      }
+    }
+
+    if let image = UIImage(named: source) {
+      return image
+    }
+
+    return nil
   }
 
   func setInitialYaw(_ yaw: Float) {

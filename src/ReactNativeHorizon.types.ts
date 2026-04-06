@@ -1,4 +1,5 @@
 import type { StyleProp, ViewStyle } from 'react-native';
+import type { ImageSourcePropType } from 'react-native';
 
 export type OnLoadEventPayload = {
   url: string;
@@ -10,7 +11,8 @@ export type OnRotationChangeEventPayload = {
 };
 
 export type ReactNativeHorizonViewProps = {
-  sourceURL: string;
+  source?: ImageSourcePropType | { uri: string };
+  sourceURL?: string;
   initialYaw?: number;
   initialPitch?: number;
   initialFov?: number;

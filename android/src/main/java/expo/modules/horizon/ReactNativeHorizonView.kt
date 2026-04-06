@@ -2,6 +2,7 @@ package expo.modules.horizon
 
 import android.content.Context
 import android.graphics.BitmapFactory
+import android.net.Uri
 import android.view.MotionEvent
 import android.view.ScaleGestureDetector
 import com.google.android.filament.Camera
@@ -23,6 +24,8 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
+import java.io.FileInputStream
+import java.io.InputStream
 import java.net.URL
 import kotlin.math.max
 import kotlin.math.min
@@ -152,7 +155,7 @@ class ReactNativeHorizonView(context: Context, appContext: AppContext) : ExpoVie
     loadTextureJob = viewScope.launch {
       runCatching {
         val bitmap = kotlinx.coroutines.withContext(Dispatchers.IO) {
-          URL(trimmedURL).openStream().use(BitmapFactory::decodeStream)
+          openInputStream(trimmedURL)?.use(BitmapFactory::decodeStream)
         } ?: return@runCatching
 
         val texture = ImageTexture.Builder()
@@ -172,6 +175,38 @@ class ReactNativeHorizonView(context: Context, appContext: AppContext) : ExpoVie
         applyCameraRotation()
 
         onLoad(mapOf("url" to trimmedURL))
+      }
+    }
+  }
+
+  private fun openInputStream(source: String): InputStream? {
+    val uri = Uri.parse(source)
+    val scheme = uri.scheme?.lowercase()
+
+    return when (scheme) {
+      "http", "https" -> URL(source).openStream()
+      "content" -> context.contentResolver.openInputStream(uri)
+      "file" -> {
+        val path = uri.path.orEmpty()
+        if (path.startsWith("/android_asset/")) {
+          context.assets.open(path.removePrefix("/android_asset/"))
+        } else {
+          context.contentResolver.openInputStream(uri) ?: FileInputStream(path)
+        }
+      }
+      "asset" -> {
+        val assetPath = source.removePrefix("asset:/").removePrefix("/")
+        context.assets.open(assetPath)
+      }
+      null -> {
+        if (source.startsWith("/")) {
+          FileInputStream(source)
+        } else {
+          URL(source).openStream()
+        }
+      }
+      else -> {
+        context.contentResolver.openInputStream(uri) ?: URL(source).openStream()
       }
     }
   }

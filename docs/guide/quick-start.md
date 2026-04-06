@@ -15,7 +15,7 @@ export default function Screen() {
     <SafeAreaView style={{ flex: 1 }}>
       <Text>{`yaw ${yaw.toFixed(1)} | pitch ${pitch.toFixed(1)}`}</Text>
       <ReactNativeHorizonView
-        sourceURL="https://cdna.artstation.com/p/assets/panos/images/013/265/080/large/romain-baudet-room-4k.jpg?1538812334"
+        source={{ uri: 'https://cdna.artstation.com/p/assets/panos/images/013/265/080/large/romain-baudet-room-4k.jpg?1538812334' }}
         initialYaw={20}
         initialPitch={0}
         initialFov={80}

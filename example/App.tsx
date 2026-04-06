@@ -25,10 +25,10 @@ export default function App() {
 
       <ReactNativeHorizonView
         key={viewerKey}
-        sourceURL={DEMO_PANORAMA}
+        source={{ uri: DEMO_PANORAMA }}
         initialYaw={96.2}
         initialPitch={-16.3}
-        initialFov={150}
+        initialFov={85}
         onLoad={({ nativeEvent: { url } }) => console.log(`Loaded: ${url}`)}
         onRotationChange={({ nativeEvent }) => {
           setYaw(nativeEvent.yaw);

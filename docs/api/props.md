@@ -1,10 +1,16 @@
 # Props
 
+## `source`
+
+- Type: `ImageSourcePropType | { uri: string }`
+- Preferred source input.
+- Supports remote URLs, local files (`file://`), Android content URIs (`content://`), and bundled assets (`require(...)`).
+
 ## `sourceURL`
 
 - Type: `string`
-- Required.
-- Equirectangular 360 image URL.
+- Optional legacy input.
+- If both `source` and `sourceURL` are provided, `sourceURL` takes precedence.
 
 ## `initialYaw`
 

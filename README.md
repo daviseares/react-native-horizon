@@ -60,7 +60,7 @@ import { ReactNativeHorizonView } from 'react-native-horizon';
 export function Panorama() {
   return (
     <ReactNativeHorizonView
-      sourceURL="https://example.com/panorama.jpg"
+      source={{ uri: 'https://example.com/panorama.jpg' }}
       initialYaw={15}
       initialPitch={0}
       onLoad={({ nativeEvent }) => {
@@ -77,7 +77,8 @@ export function Panorama() {
 
 ## Props
 
-- `sourceURL: string` - HTTPS URL for the panorama image.
+- `source?: ImageSourcePropType | { uri: string }` - preferred source prop. Supports remote URLs, local files (`file://`), Android content URIs (`content://`), and bundled assets (`require(...)`).
+- `sourceURL?: string` - backward-compatible string source. If both `source` and `sourceURL` are provided, `sourceURL` takes precedence.
 - `initialYaw?: number` - initial horizontal angle in degrees.
 - `initialPitch?: number` - initial vertical angle in degrees.
 - `initialFov?: number` - initial field-of-view in degrees (smaller values zoom in).

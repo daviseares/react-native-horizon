@@ -63,7 +63,7 @@ import { ReactNativeHorizonView } from 'react-native-horizon';
 export function Panorama() {
   return (
     <ReactNativeHorizonView
-      sourceURL="https://example.com/panorama.jpg"
+      source={{ uri: 'https://example.com/panorama.jpg' }}
       initialYaw={15}
       initialPitch={0}
       initialFov={75}
@@ -74,3 +74,33 @@ export function Panorama() {
 ```
 
 If the scene starts too zoomed in, increase `initialFov` (for example: `80`, `85`).
+
+## Source types
+
+`react-native-horizon` supports all common image inputs:
+
+- Remote URL
+
+```tsx
+source={{ uri: 'https://example.com/panorama.jpg' }}
+```
+
+- Local file path
+
+```tsx
+source={{ uri: 'file:///var/mobile/Containers/Data/.../panorama.jpg' }}
+```
+
+- Android content URI
+
+```tsx
+source={{ uri: 'content://media/external/images/media/12345' }}
+```
+
+- Bundled asset
+
+```tsx
+source={require('./assets/panorama.jpg')}
+```
+
+For backward compatibility, you can still pass `sourceURL`.
