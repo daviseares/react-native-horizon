@@ -55,3 +55,6 @@ yarn-error.log
 
 # Expo
 .expo/*
+
+# VitePress build output
+docs/.vitepress/dist/
